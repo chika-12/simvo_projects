@@ -1,7 +1,6 @@
 //Global Variables
 let username = '';
-let startUpAmount = 1000;
-let numberOfRounds = 0;
+
 //HTML IDS
 const userNameId = 'craps-input';
 const registrationPane = 'registration-pane';
@@ -11,14 +10,25 @@ const user = 'user';
 const round = 'rounds';
 const amount = 'amount';
 const roundManager = 'round-manager';
+const userBetId = 'user-bet-amount';
 
-//In Game Variables
-currentRounds = numberOfRounds;
-currentAmount = startUpAmount;
+//In built game variables
+const bet = {
+  even: 'even',
+  odd: 'odd',
+};
+const betChoices = [bet.even, bet.odd];
+let startUpAmount = 1000;
+let numberOfRounds = 0;
+let minimumBet = 100;
+let userBetAmount = minimumBet;
+let currentBet = undefined;
+let currentRounds = numberOfRounds;
+let currentMoney = startUpAmount - userBetAmount;
+//currentAmount = startUpAmount;
 
 function getCrapPlayerUsername() {
   username = document.getElementById(userNameId).value;
-  console.log(username);
 
   let validRegexChars = /^[0-9]|[^a-zA-Z0-9_]/g;
   if (username.length < 5 || validRegexChars.test(username)) {
@@ -45,8 +55,9 @@ function firstRound() {
   document.getElementById(user).innerHTML = username;
   currentRounds = numberOfRounds;
   currentAmount = startUpAmount;
-  startUpMoney(currentAmount);
+  startUpMoney(currentMoney);
   gameRounds(currentRounds);
+  SetBetAmount();
 }
 
 function startUpMoney(money) {
@@ -55,4 +66,43 @@ function startUpMoney(money) {
 
 function gameRounds(number) {
   document.getElementById(round).innerHTML = number;
+}
+
+function evenSelector() {
+  chooseBet(bet.even);
+}
+function oddSelector() {
+  chooseBet(bet.odd);
+}
+function chooseBet(move) {
+  betChoices.forEach((id) => {
+    document.getElementById(id).style.backgroundColor = '';
+  });
+  document.getElementById(move).style.backgroundColor = 'red';
+  currentBet = move;
+  console.log(currentBet);
+}
+function increaseBet() {
+  const next = Math.min(
+    userBetAmount + minimumBet,
+    currentMoney + userBetAmount,
+  );
+  const delta = next - userBetAmount;
+  userBetAmount = next;
+  currentMoney -= delta;
+  SetBetAmount();
+}
+function decreaseBet() {
+  const next = Math.max(userBetAmount - minimumBet, minimumBet);
+  const delta = userBetAmount - next;
+  userBetAmount = next;
+  currentMoney += delta;
+  SetBetAmount();
+}
+function SetBetAmount() {
+  document.getElementById(userBetId).innerHTML = userBetAmount;
+  resetCurentMoney();
+}
+function resetCurentMoney() {
+  document.getElementById(amount).innerHTML = currentMoney;
 }

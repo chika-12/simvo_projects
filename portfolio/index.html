@@ -518,7 +518,16 @@
               </div>
               <div>Round: <span id="rounds"></span></div>
             </div>
-            <div id="round-manager">Round Manager</div>
+            <div id="roll-dice">Roll dice</div>
+            <div id="round-manager">
+              <div id="even" onclick="evenSelector()">Even</div>
+              <div id="odd" onclick="oddSelector()">Odd</div>
+              <div id="bet-amount">
+                <span onclick="decreaseBet()">-</span>
+                <span id="user-bet-amount"></span>
+                <span onclick="increaseBet()">+</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
