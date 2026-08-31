@@ -1,0 +1,64 @@
+:root {
+  --width-scale: min(700px, 80vw);
+  --hieght-scale: cal(var(--width-scale) * 0.714);
+}
+.craps {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgbk0gvPByYuI_DmH30ljwP9-0ocMm-QQqd4LoOs7K5sufFbWJgLQfF-Y&s');
+}
+.craps-container {
+  width: min(700px, 80vw);
+  height: min(500px, 57vw);
+  border: solid white 2px;
+  background-image: url('https://media.istockphoto.com/id/544482712/photo/playing-craps-in-a-casino-with-slot-machines.jpg?s=612x612&w=0&k=20&c=MzDsXmJPQHNQ-UV76Eg7BnHZVD0-bqUJKXtVkLaY9KM=');
+}
+#registration-pane {
+  text-align: center;
+  margin-top: 20px;
+}
+.registration-input {
+  background: none;
+  border: none;
+  border-bottom: solid white 2px;
+  text-align: center;
+  color: white;
+}
+.registration-input:focus {
+  outline-width: 0;
+}
+.input-wrap {
+  display: flex;
+  justify-content: center;
+}
+.registration-continue {
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+  font-weight: 400;
+}
+.registration-continue:hover {
+  color: aqua;
+}
+#main-game {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 40%;
+  border: solid blue 2px;
+  /*position: relative;*/
+}
+#main-game-stats {
+  font-size: large;
+}
+#round-manager {
+  /*display: none;*/
+  border: solid blue 2px;
+  margin-top: auto;
+  text-align: center;
+  width: 100%;
+}
