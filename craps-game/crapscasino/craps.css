@@ -1,0 +1,238 @@
+:root {
+  --width-scale: min(700px, 80vw);
+  --height-scale: calc(var(--width-scale) * 0.714);
+}
+
+.craps {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  background-image:
+    linear-gradient(180deg, rgba(11, 14, 26, 0.75), rgba(11, 14, 26, 0.9)),
+    url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgbk0gvPByYuI_DmH30ljwP9-0ocMm-QQqd4LoOs7K5sufFbWJgLQfF-Y&s');
+  background-size: cover;
+  background-position: center;
+}
+
+.craps-container {
+  width: var(--width-scale);
+  height: var(--height-scale);
+  max-height: 80vh;
+  border-radius: 20px;
+  border: 1px solid var(--amber);
+  box-shadow:
+    0 0 0 1px rgba(255, 176, 32, 0.15),
+    0 20px 50px -12px rgba(0, 0, 0, 0.7),
+    inset 0 0 60px -20px rgba(139, 92, 246, 0.35);
+  overflow: hidden;
+  position: relative;
+  background-image:
+    linear-gradient(180deg, rgba(11, 14, 26, 0.55), rgba(11, 14, 26, 0.85)),
+    url('https://media.istockphoto.com/id/544482712/photo/playing-craps-in-a-casino-with-slot-machines.jpg?s=612x612&w=0&k=20&c=MzDsXmJPQHNQ-UV76Eg7BnHZVD0-bqUJKXtVkLaY9KM=');
+  background-size: cover;
+  background-position: center;
+}
+
+/* ===================== Registration pane ===================== */
+#registration-pane {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  text-align: center;
+  color: var(--text-hi);
+  font-family: var(--font-mono);
+}
+
+.registration-input {
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--teal);
+  text-align: center;
+  color: var(--text-hi);
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  padding: 0.4rem 0.2rem;
+  width: 220px;
+  transition: border-color 0.2s ease;
+}
+.registration-input:focus {
+  outline-width: 0;
+  border-color: var(--amber);
+}
+
+.input-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.registration-continue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--void);
+  background: var(--teal);
+  padding: 0.75rem 2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 0 20px -4px rgba(34, 211, 182, 0.6);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+.registration-continue:hover {
+  color: var(--void);
+  background: var(--amber);
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px -2px rgba(255, 176, 32, 0.7);
+}
+
+/* ===================== Main game ===================== */
+#main-game {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 1.6rem 1.2rem;
+  color: var(--text-hi);
+}
+
+#main-game-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+}
+#craps-stats-money-container {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--amber);
+  text-shadow: 0 0 16px rgba(255, 176, 32, 0.4);
+}
+
+#round-manager {
+  display: grid;
+  grid-template-columns: 33% auto 33%;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  margin-top: auto;
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(19, 24, 41, 0.75);
+  backdrop-filter: blur(6px);
+}
+
+#even,
+#odd {
+  padding: 0.7rem 0;
+  border-radius: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+#even:hover,
+#odd:hover {
+  color: var(--text-hi);
+  border-color: var(--violet);
+  transform: translateY(-2px);
+}
+
+#bet-amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  font-family: var(--font-mono);
+}
+#bet-amount span[onclick] {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background 0.15s ease,
+    transform 0.15s ease;
+}
+#bet-amount span[onclick]:hover {
+  background: var(--violet);
+  color: var(--text-hi);
+  transform: scale(1.08);
+}
+
+#user-bet-amount {
+  min-width: 64px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  background: var(--void);
+  color: var(--amber);
+  font-weight: 600;
+  border: 1px solid var(--amber);
+}
+
+#roll-dice {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 0.75rem 2.2rem;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--void);
+  background: var(--amber);
+  border-radius: 999px;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: 0 0 24px -4px rgba(255, 176, 32, 0.6);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+#roll-dice::before {
+  content: '⚂';
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+#roll-dice:hover {
+  background: var(--pink);
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px -2px rgba(255, 77, 141, 0.7);
+}
+
+#roll-dice:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 0 16px -4px rgba(255, 176, 32, 0.5);
+}

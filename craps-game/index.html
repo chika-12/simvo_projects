@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chika Ndukwe — Backend Engineer</title>
+    <meta
+      name="description"
+      content="Chika Ndukwe is a backend engineer in Abuja, Nigeria, building APIs, microservices and databases in Node.js, NestJS and Python."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./crapscasino/craps.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a href="#top" class="logo">chika<span>.</span>dev</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">about</a>
+        <a href="#projects">projects</a>
+        <a href="#experience">experience</a>
+        <a href="#writing">writing</a>
+        <a href="#contact" class="nav-cta">contact</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main id="top">
+      <!-- ===================== HERO ===================== -->
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="hero-id">
+            <div class="avatar">
+              <!-- Swap this span for: <img src="your-photo.jpg" alt="Chika Ndukwe"> -->
+              <img src="./images/profile.png" alt="Chika Ndukwe" />
+              <span class="avatar-hint">add photo</span>
+            </div>
+            <div class="hero-id-text">
+              <p class="hero-name">Chika Mark</p>
+              <p class="hero-role">Backend Engineer</p>
+            </div>
+          </div>
+          <p class="eyebrow">
+            <span class="dot dot-teal"></span>available for backend roles ·
+            Abuja, Nigeria
+          </p>
+          <h1>
+            I build the part of the product<br />
+            nobody sees <span class="accent-underline">until it breaks.</span>
+          </h1>
+          <p class="hero-sub">
+            Backend engineer working in Node.js, TypeScript and NestJS —
+            designing APIs, service boundaries, and databases that hold up under
+            real traffic, not just the demo.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">See the projects</a>
+            <a href="mailto:markworship001@gmail.com" class="btn btn-ghost"
+              >markworship001@gmail.com</a
+            >
+          </div>
+          <div class="hero-links">
+            <a href="https://github.com/chika-12" target="_blank" rel="noopener"
+              >GitHub ↗</a
+            >
+            <a href="https://dev.to" target="_blank" rel="noopener">Dev.to ↗</a>
+            <a href="https://hashnode.com" target="_blank" rel="noopener"
+              >Hashnode ↗</a
+            >
+          </div>
+        </div>
+
+        <!-- Signature element: an animated request pipeline through Chika's own microservice stack -->
+        <div
+          class="pipeline"
+          role="img"
+          aria-label="Diagram of a request travelling from a client through an API gateway to an auth service and school service, ending at a database, with packets animating along the path"
+        >
+          <svg
+            viewBox="0 0 520 460"
+            class="pipeline-svg"
+            preserveAspectRatio="xMidYMid meet"
+          >
+            <!-- connecting paths -->
+            <path
+              id="path-1"
+              class="wire"
+              d="M 260 30 C 260 90, 260 90, 260 140"
+            />
+            <path
+              id="path-2"
+              class="wire"
+              d="M 260 200 C 150 230, 90 250, 90 300"
+            />
+            <path
+              id="path-3"
+              class="wire"
+              d="M 260 200 C 370 230, 430 250, 430 300"
+            />
+            <path
+              id="path-4"
+              class="wire"
+              d="M 90 360 C 90 400, 200 410, 260 420"
+            />
+            <path
+              id="path-5"
+              class="wire"
+              d="M 430 360 C 430 400, 320 410, 260 420"
+            />
+
+            <!-- packets travelling the wires -->
+            <circle
+              class="packet packet-amber"
+              r="5"
+              style="offset-path: path('M 260 30 C 260 90, 260 90, 260 140')"
+            />
+            <circle
+              class="packet packet-violet"
+              r="5"
+              style="
+                offset-path: path('M 260 200 C 150 230, 90 250, 90 300');
+                animation-delay: 0.4s;
+              "
+            />
+            <circle
+              class="packet packet-pink"
+              r="5"
+              style="
+                offset-path: path('M 260 200 C 370 230, 430 250, 430 300');
+                animation-delay: 0.9s;
+              "
+            />
+            <circle
+              class="packet packet-teal"
+              r="5"
+              style="
+                offset-path: path('M 90 360 C 90 400, 200 410, 260 420');
+                animation-delay: 1.5s;
+              "
+            />
+            <circle
+              class="packet packet-teal"
+              r="5"
+              style="
+                offset-path: path('M 430 360 C 430 400, 320 410, 260 420');
+                animation-delay: 1.9s;
+              "
+            />
+
+            <!-- nodes -->
+            <g class="node node-client" transform="translate(260,10)">
+              <rect x="-58" y="-20" width="116" height="40" rx="10" />
+              <text x="0" y="6" text-anchor="middle">client</text>
+            </g>
+
+            <g class="node node-gateway" transform="translate(260,170)">
+              <rect x="-72" y="-30" width="144" height="60" rx="12" />
+              <text x="0" y="-4" text-anchor="middle">api-gateway</text>
+              <text x="0" y="16" text-anchor="middle" class="port">:3000</text>
+            </g>
+
+            <g class="node node-auth" transform="translate(90,330)">
+              <rect x="-68" y="-30" width="136" height="60" rx="12" />
+              <text x="0" y="-4" text-anchor="middle">auth-service</text>
+              <text x="0" y="16" text-anchor="middle" class="port">:3001</text>
+            </g>
+
+            <g class="node node-school" transform="translate(430,330)">
+              <rect x="-68" y="-30" width="136" height="60" rx="12" />
+              <text x="0" y="-4" text-anchor="middle">school-service</text>
+              <text x="0" y="16" text-anchor="middle" class="port">:3002</text>
+            </g>
+
+            <g class="node node-db" transform="translate(260,438)">
+              <rect x="-56" y="-19" width="112" height="38" rx="9" />
+              <text x="0" y="5" text-anchor="middle">database</text>
+            </g>
+          </svg>
+          <p class="pipeline-caption">
+            a real shape — modelled on the microservices behind
+            <span>SkillUp Africa</span>
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================== ABOUT ===================== -->
+      <section class="about" id="about">
+        <div class="section-head">
+          <p class="eyebrow">about</p>
+          <h2>Systems thinking, applied to Nigerian problems.</h2>
+        </div>
+        <div class="about-grid">
+          <p class="about-lead">
+            I'm a backend engineer based in Abuja, trained through ALX's
+            Software Engineering and Backend Pro Dev programs, with
+            certifications in Agile Project Management and Cybersecurity. Most
+            days I'm in Node.js, TypeScript, Express and MongoDB — or inside a
+            NestJS microservices monorepo arguing with myself about service
+            boundaries. I also write Python and Django, and started out in C and
+            Ruby, which is probably why I still think in terms of memory and
+            state before I think in terms of frameworks.
+          </p>
+          <ul class="about-facts">
+            <li><span>base</span>Abuja, Nigeria</li>
+            <li><span>focus</span>APIs · microservices · databases</li>
+            <li><span>stack</span>Node.js · TypeScript · NestJS · MongoDB</li>
+            <li><span>also</span>Django · Python · C · Ruby</li>
+            <li>
+              <span>training</span>ALX Software Engineering + Backend Pro Dev
+            </li>
+            <li>
+              <span>certified</span>Agile Project Management · Cybersecurity
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ===================== SKILLS ===================== -->
+      <section class="skills">
+        <div class="section-head">
+          <p class="eyebrow">skill registry</p>
+          <h2>What's running in production, in my head.</h2>
+        </div>
+        <div class="registry">
+          <div class="service-card sc-violet">
+            <div class="service-top">
+              <span class="service-dot"></span>
+              <h3>languages</h3>
+            </div>
+            <div class="tags">
+              <span>TypeScript</span><span>JavaScript</span><span>Python</span
+              ><span>C</span><span>Ruby</span>
+            </div>
+          </div>
+
+          <div class="service-card sc-teal">
+            <div class="service-top">
+              <span class="service-dot"></span>
+              <h3>frameworks</h3>
+            </div>
+            <div class="tags">
+              <span>Node.js</span><span>Express</span><span>NestJS</span
+              ><span>Django</span>
+            </div>
+          </div>
+
+          <div class="service-card sc-amber">
+            <div class="service-top">
+              <span class="service-dot"></span>
+              <h3>data &amp; validation</h3>
+            </div>
+            <div class="tags">
+              <span>MongoDB</span><span>Mongoose</span><span>PostgreSQL</span
+              ><span>TypeORM</span><span>Zod</span>
+            </div>
+          </div>
+
+          <div class="service-card sc-pink">
+            <div class="service-top">
+              <span class="service-dot"></span>
+              <h3>systems &amp; infra</h3>
+            </div>
+            <div class="tags">
+              <span>Microservices</span><span>TCP transport</span
+              ><span>BullMQ</span><span>Cron jobs</span><span>JWT / RBAC</span
+              ><span>Render</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== PROJECTS ===================== -->
+      <section class="projects" id="projects">
+        <div class="section-head">
+          <p class="eyebrow">projects</p>
+          <h2>Four systems, four different failure modes to design around.</h2>
+        </div>
+
+        <div class="project-list">
+          <article class="project pj-violet">
+            <div class="project-head">
+              <h3>HavenHub</h3>
+              <span class="project-tag">modular monolith</span>
+            </div>
+            <p>
+              One platform for hotel management, short/long-term rentals and
+              property sales — with a Risk Intelligence layer working quietly
+              underneath, never surfaced to users as "fraud detection."
+            </p>
+            <ul class="project-notes">
+              <li>
+                Hotel-scoped RBAC via a dedicated permissions guard, checked
+                against the database rather than filtered in memory
+              </li>
+              <li>
+                Address + Hotel creation wrapped in a single TypeORM transaction
+                to avoid orphaned rows
+              </li>
+              <li>
+                Event-driven hooks (hotel.created, booking.created) planned for
+                notifications and risk scoring, without blocking the main
+                request
+              </li>
+            </ul>
+            <div class="stack-row">
+              <span>NestJS</span><span>PostgreSQL</span><span>TypeORM</span>
+            </div>
+          </article>
+
+          <article class="project pj-teal">
+            <div class="project-head">
+              <h3>SkillUp Africa</h3>
+              <span class="project-tag">microservices</span>
+            </div>
+            <p>
+              A NestJS microservices EdTech platform for secondary schools in
+              Nigeria, built in-house while I teach students on the same
+              curriculum it serves.
+            </p>
+            <ul class="project-notes">
+              <li>
+                Auth, gateway and school services talk over TCP inside a pnpm
+                monorepo
+              </li>
+              <li>
+                Compensating transactions roll back a partially-created student
+                across services if one write fails
+              </li>
+              <li>
+                Per-term billing designed around Paystack, with eventual
+                consistency for payment state
+              </li>
+            </ul>
+            <div class="stack-row">
+              <span>NestJS</span><span>TCP</span><span>BullMQ</span
+              ><span>Paystack</span>
+            </div>
+          </article>
+
+          <article class="project pj-amber">
+            <div class="project-head">
+              <h3>KDC School Management System</h3>
+              <span class="project-tag">live in production</span>
+            </div>
+            <p>
+              A CBT exam and results backend for a Nigerian NGO school, built
+              around Exam as the entity that everything else schedules itself
+              off.
+            </p>
+            <ul class="project-notes">
+              <li>
+                Cron-automated timetable status controls when students can even
+                enter an exam session
+              </li>
+              <li>
+                Results auto-score against WAEC grade bands from combined CBT
+                and written scores
+              </li>
+              <li>
+                Deployed and running on Render, which is what made the cron work
+                worth building in the first place
+              </li>
+            </ul>
+            <div class="stack-row">
+              <span>Express</span><span>MongoDB</span><span>Zod</span
+              ><span>Cron</span>
+            </div>
+          </article>
+
+          <article class="project pj-pink">
+            <div class="project-head">
+              <h3>Capacity Planner</h3>
+              <span class="project-tag">learning project</span>
+            </div>
+            <p>
+              A Python capacity-planning tool, deliberately stubbed and built
+              from first principles rather than scaffolded — the point was the
+              algorithmic thinking, not the finished tool.
+            </p>
+            <div class="stack-row">
+              <span>Python</span><span>DS&amp;A</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== EXPERIENCE ===================== -->
+      <section class="experience" id="experience">
+        <div class="section-head">
+          <p class="eyebrow">experience</p>
+          <h2>Where the backend habits were formed.</h2>
+        </div>
+        <ol class="timeline">
+          <li>
+            <span class="tl-marker"></span>
+            <div class="tl-body">
+              <h3>Pontex Global</h3>
+              <p>Backend work in Node.js, Express and PostgreSQL.</p>
+            </div>
+          </li>
+          <li>
+            <span class="tl-marker"></span>
+            <div class="tl-body">
+              <h3>Nobbnet</h3>
+              <p>Backend engineering.</p>
+            </div>
+          </li>
+          <li>
+            <span class="tl-marker"></span>
+            <div class="tl-body">
+              <h3>Styleness</h3>
+              <p>Backend engineering.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ===================== WRITING ===================== -->
+      <section class="writing" id="writing">
+        <div class="section-head">
+          <p class="eyebrow">field notes</p>
+          <h2>Writing on Dev.to and Hashnode — mostly bugs I've earned.</h2>
+        </div>
+        <ul class="notes-list">
+          <li>
+            <span class="note-index">idempotency</span>
+            <span class="note-title"
+              >Idempotency keys, upserts, and set-based state transitions</span
+            >
+          </li>
+          <li>
+            <span class="note-index">mongoose</span>
+            <span class="note-title"
+              >The findByIdAndUpdate bug that quietly skips your pre-save
+              hooks</span
+            >
+          </li>
+          <li>
+            <span class="note-index">sagas</span>
+            <span class="note-title"
+              >Compensating transactions for atomic student creation across
+              microservices</span
+            >
+          </li>
+          <li>
+            <span class="note-index">cron</span>
+            <span class="note-title"
+              >Designing a cron-managed timetable status for a live exam
+              system</span
+            >
+          </li>
+          <li>
+            <span class="note-index">cbt</span>
+            <span class="note-title"
+              >Building network-resilient CBT exam sessions for unstable
+              connections</span
+            >
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===================== CONTACT ===================== -->
+      <section class="contact" id="contact">
+        <div class="contact-inner">
+          <p class="eyebrow">contact</p>
+          <h2>Building something that needs a backend?</h2>
+          <p class="contact-sub">
+            I'm in Abuja, working remote-friendly with teams anywhere.
+          </p>
+          <div class="contact-actions">
+            <a href="mailto:markworship001@gmail.com" class="btn btn-primary"
+              >markworship001@gmail.com</a
+            >
+            <a
+              href="https://github.com/chika-12"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-ghost"
+              >GitHub ↗</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- The crabs Cassino Game -->
+      <h1 style="text-align: center">Craps Casino Game</h1>
+      <section class="craps">
+        <div class="craps-container">
+          <div id="registration-pane">
+            <div>Enter Username</div>
+            <div class="input-wrap">
+              <input class="registration-input" id="craps-input" />
+            </div>
+            <div
+              class="registration-continue"
+              onclick="getCrapPlayerUsername()"
+            >
+              continue
+            </div>
+          </div>
+          <div id="main-game">
+            <div id="main-game-stats">
+              <div>
+                Welcome,
+                <span id="user"></span>
+              </div>
+              <div id="craps-stats-money-container">
+                $<span id="amount"></span>
+              </div>
+              <div>Round: <span id="rounds"></span></div>
+            </div>
+            <div id="roll-dice">Roll dice</div>
+            <div id="round-manager">
+              <div id="even" onclick="evenSelector()">Even</div>
+              <div id="odd" onclick="oddSelector()">Odd</div>
+              <div id="bet-amount">
+                <span onclick="decreaseBet()">-</span>
+                <span id="user-bet-amount"></span>
+                <span onclick="increaseBet()">+</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Chika Ndukwe · Backend Engineer · Abuja, Nigeria</p>
+      <p class="footer-mono">built with node in mind, shipped as html/css</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="./crapscasino/index.js"></script>
+  </body>
+</html>
