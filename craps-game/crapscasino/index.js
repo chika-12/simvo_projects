@@ -11,6 +11,7 @@ const round = 'rounds';
 const amount = 'amount';
 const roundManager = 'round-manager';
 const userBetId = 'user-bet-amount';
+let activeBet = 0;
 
 //In built game variables
 const bet = {
@@ -24,7 +25,12 @@ let minimumBet = 100;
 let userBetAmount = minimumBet;
 let currentBet = undefined;
 let currentRounds = numberOfRounds;
-let currentMoney = startUpAmount - userBetAmount;
+let currentMoney = startUpAmount;
+let canChooseBet = true;
+let delta = 0;
+let next = 0;
+let win = false;
+let haveMadeBet = false;
 //currentAmount = startUpAmount;
 
 function getCrapPlayerUsername() {
@@ -75,34 +81,145 @@ function oddSelector() {
   chooseBet(bet.odd);
 }
 function chooseBet(move) {
-  betChoices.forEach((id) => {
-    document.getElementById(id).style.backgroundColor = '';
-  });
-  document.getElementById(move).style.backgroundColor = 'red';
-  currentBet = move;
-  console.log(currentBet);
+  if (canChooseBet) {
+    betChoices.forEach((id) => {
+      document.getElementById(id).style.backgroundColor = '';
+    });
+    document.getElementById(move).style.backgroundColor = 'red';
+    currentBet = move;
+    console.log(currentBet);
+    haveMadeBet = true;
+  }
 }
 function increaseBet() {
-  const next = Math.min(
-    userBetAmount + minimumBet,
-    currentMoney + userBetAmount,
-  );
-  const delta = next - userBetAmount;
-  userBetAmount = next;
-  currentMoney -= delta;
-  SetBetAmount();
+  if (canChooseBet && userBetAmount < currentMoney) {
+    next = Math.min(userBetAmount + minimumBet, currentMoney + userBetAmount);
+    userBetAmount = next;
+    SetBetAmount();
+  }
 }
 function decreaseBet() {
-  const next = Math.max(userBetAmount - minimumBet, minimumBet);
-  const delta = userBetAmount - next;
-  userBetAmount = next;
-  currentMoney += delta;
-  SetBetAmount();
+  if (canChooseBet && userBetAmount > minimumBet) {
+    next = Math.max(userBetAmount - minimumBet, minimumBet);
+    userBetAmount = next;
+    SetBetAmount();
+  }
 }
 function SetBetAmount() {
   document.getElementById(userBetId).innerHTML = userBetAmount;
-  resetCurentMoney();
+  //resetCurentMoney();
 }
 function resetCurentMoney() {
   document.getElementById(amount).innerHTML = currentMoney;
+}
+function diceRollFunc() {
+  if (haveMadeBet) {
+    canChooseBet = false;
+    activeBet = userBetAmount;
+    const diceRoll = document.getElementById('dice-roll-container');
+    rollADie({
+      element: diceRoll,
+      numberOfDice: 2,
+      callback: callBackToDiceRoll,
+      delay: 1000000,
+    });
+  } else {
+    showToast("You haven't made a bet yet");
+  }
+}
+function resetGame() {
+  document.getElementById('reset-end').style.display = 'flex';
+}
+function callBackToDiceRoll(diceResult) {
+  document.getElementById('roll-dice').style.display = 'none';
+  const result = diceResult[0] + diceResult[1];
+  const rolledEven = result % 2 === 0;
+  win =
+    (rolledEven && currentBet === 'even') ||
+    (!rolledEven && currentBet === 'odd');
+
+  amountRecalculation(result);
+  resetGame();
+}
+function amountRecalculation(result) {
+  if (win) {
+    currentMoney += activeBet;
+    setResult(`You rolled ${result} — you win!`, 'win');
+  } else {
+    currentMoney -= activeBet;
+    setResult(`You rolled ${result} — you loose!`, 'loose');
+  }
+  resetCurentMoney();
+}
+function nextRound() {
+  if (currentMoney >= minimumBet) {
+    currentRounds += 1;
+    canChooseBet = true;
+    win = false;
+    haveMadeBet = false;
+    currentBet = undefined;
+    userBetAmount = minimumBet;
+
+    // restore the parts of the UI the previous round changed
+    document.getElementById('roll-dice').style.display = '';
+    document.getElementById('reset-end').style.display = 'none';
+    document.getElementById('dice-roll-container').innerHTML = '';
+    document.getElementById('result').textContent = '';
+    document.getElementById('result').className = '';
+    betChoices.forEach((id) => {
+      document.getElementById(id).style.backgroundColor = '';
+    });
+
+    gameRounds(currentRounds);
+    resetCurentMoney();
+    SetBetAmount();
+  } else {
+    showToast('You have run out of cash');
+    endGame();
+  }
+}
+
+function setResult(text, outcome) {
+  const result = document.getElementById('result');
+  result.textContent = text;
+  result.className = '';
+  result.classList.add('show', outcome);
+}
+function endGame() {
+  startUpAmount = 1000;
+  numberOfRounds = 0;
+  minimumBet = 100;
+  userBetAmount = minimumBet;
+  currentBet = undefined;
+  currentRounds = numberOfRounds;
+  currentMoney = startUpAmount;
+  canChooseBet = true;
+  delta = 0;
+  next = 0;
+  win = false;
+  haveMadeBet = false;
+  activeBet = 0;
+  username = '';
+
+  document.getElementById(userNameId).value = ''; // clear the stale input
+  document.getElementById(mainGame).style.display = 'none'; // hide the game
+  document.getElementById(registrationPane).style.display = 'flex'; // show the form
+  document.getElementById('roll-dice').style.display = '';
+  document.getElementById('reset-end').style.display = 'none';
+  document.getElementById('dice-roll-container').innerHTML = '';
+  document.getElementById('result').textContent = '';
+  document.getElementById('result').className = '';
+  betChoices.forEach((id) => {
+    document.getElementById(id).style.backgroundColor = '';
+  });
+}
+let toastTimeout;
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  clearTimeout(toastTimeout);
+  toast.textContent = message;
+  toast.classList.add('show');
+  toastTimeout = setTimeout(() => {
+    toast.classList.remove('show');
+  }, 2500);
 }

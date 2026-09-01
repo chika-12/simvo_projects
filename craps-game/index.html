@@ -518,7 +518,14 @@
               </div>
               <div>Round: <span id="rounds"></span></div>
             </div>
-            <div id="roll-dice">Roll dice</div>
+            <div id="toast" class="toast"></div>
+            <div id="roll-dice" onclick="diceRollFunc()">Roll dice</div>
+            <div id="dice-roll-container"></div>
+            <div id="result"></div>
+            <div class="reset-end" id="reset-end">
+              <span id="next-round" onclick="nextRound()">Next Round</span
+              ><span id="end-game" onclick="endGame()">End Game</span>
+            </div>
             <div id="round-manager">
               <div id="even" onclick="evenSelector()">Even</div>
               <div id="odd" onclick="oddSelector()">Odd</div>
@@ -538,7 +545,11 @@
       <p class="footer-mono">built with node in mind, shipped as html/css</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!--<script src="script.js"></script>-->
     <script src="./crapscasino/index.js"></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/roll-a-die@2.0.1/dist/roll-a-die.js"
+    ></script>
   </body>
 </html>

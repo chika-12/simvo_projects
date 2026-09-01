@@ -236,3 +236,113 @@
   transform: translateY(0) scale(0.97);
   box-shadow: 0 0 16px -4px rgba(255, 176, 32, 0.5);
 }
+#roll-dice {
+  margin-bottom: 1.5rem;
+}
+
+#dice-roll-container {
+  position: relative;
+  min-height: 120px;
+  margin-bottom: 1rem;
+}
+.reset-end {
+  display: none;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+#next-round,
+#end-game {
+  padding: 0.6rem 1.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 999px;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+#next-round {
+  color: var(--void);
+  background: var(--teal);
+}
+#next-round:hover {
+  background: var(--amber);
+  transform: translateY(-2px);
+}
+
+#end-game {
+  color: var(--text-mid);
+  background: transparent;
+  border: 1px solid var(--line);
+}
+#end-game:hover {
+  color: var(--pink);
+  border-color: var(--pink);
+  transform: translateY(-2px);
+}
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--surface);
+  color: var(--text-hi);
+  border: 1px solid var(--amber);
+  border-radius: 999px;
+  padding: 0.8rem 1.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  box-shadow:
+    0 12px 30px -8px rgba(0, 0, 0, 0.6),
+    0 0 20px -6px rgba(255, 176, 32, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+  z-index: 999;
+  white-space: nowrap;
+}
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+#result {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  min-height: 2.4rem;
+  padding: 0.4rem 0;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+#result.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#result.win {
+  color: var(--teal);
+  text-shadow: 0 0 20px rgba(34, 211, 182, 0.5);
+}
+
+#result.lose {
+  color: var(--pink);
+  text-shadow: 0 0 20px rgba(255, 77, 141, 0.5);
+}
+
+#result.push {
+  color: var(--amber);
+  text-shadow: 0 0 20px rgba(255, 176, 32, 0.5);
+}
