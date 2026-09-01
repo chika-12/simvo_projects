@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="settings.css" />
+
+    <title>Game Settings</title>
+  </head>
+
+  <body>
+    <main class="settings-container">
+      <h1>Game Settings</h1>
+
+      <form id="settings-form">
+        <div class="setting-group">
+          <label for="start-up-amount">Starting Amount</label>
+          <input
+            type="number"
+            id="start-up-amount"
+            name="startUpAmount"
+            value="4000"
+            min="0"
+          />
+        </div>
+
+        <div class="setting-group">
+          <label for="minimum-bet">Minimum Bet</label>
+          <input
+            type="number"
+            id="minimum-bet"
+            name="minimumBet"
+            value="200"
+            min="1"
+          />
+        </div>
+
+        <div class="setting-group">
+          <label for="number-of-dice">Number of Dice</label>
+          <input
+            type="number"
+            id="number-of-dice"
+            name="numberOfDice"
+            value="2"
+            min="1"
+          />
+        </div>
+
+        <div class="setting-group">
+          <label for="delay-time">Delay Time</label>
+          <input
+            type="number"
+            id="delay-time"
+            name="delayTime"
+            value="10000000"
+            min="0"
+          />
+        </div>
+
+        <div class="settings-actions">
+          <button type="submit">Save Settings</button>
+          <a href="index.html">Back to Game</a>
+        </div>
+      </form>
+    </main>
+
+    <script src="settings.js"></script>
+  </body>
+</html>
+```

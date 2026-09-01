@@ -11,7 +11,20 @@ const round = 'rounds';
 const amount = 'amount';
 const roundManager = 'round-manager';
 const userBetId = 'user-bet-amount';
-let activeBet = 0;
+
+//Game Settings
+// const startUpAmount = 4000;
+// const minimumBet = 200;
+// const numberOfDice = 2;
+// const delayTime = 10000000;
+const savedSettings = localStorage.getItem('gameSettings');
+
+const gameSettings = JSON.parse(savedSettings);
+
+const startUpAmount = gameSettings.startUpAmount;
+const minimumBet = gameSettings.minimumBet;
+const numberOfDice = gameSettings.numberOfDice;
+const delayTime = gameSettings.delayTime;
 
 //In built game variables
 const bet = {
@@ -19,9 +32,7 @@ const bet = {
   odd: 'odd',
 };
 const betChoices = [bet.even, bet.odd];
-let startUpAmount = 1000;
 let numberOfRounds = 0;
-let minimumBet = 100;
 let userBetAmount = minimumBet;
 let currentBet = undefined;
 let currentRounds = numberOfRounds;
@@ -31,7 +42,7 @@ let delta = 0;
 let next = 0;
 let win = false;
 let haveMadeBet = false;
-//currentAmount = startUpAmount;
+let activeBet = 0;
 
 function getCrapPlayerUsername() {
   username = document.getElementById(userNameId).value;
@@ -119,9 +130,9 @@ function diceRollFunc() {
     const diceRoll = document.getElementById('dice-roll-container');
     rollADie({
       element: diceRoll,
-      numberOfDice: 2,
+      numberOfDice: numberOfDice,
       callback: callBackToDiceRoll,
-      delay: 1000000,
+      delay: delayTime,
     });
   } else {
     showToast("You haven't made a bet yet");
@@ -132,7 +143,9 @@ function resetGame() {
 }
 function callBackToDiceRoll(diceResult) {
   document.getElementById('roll-dice').style.display = 'none';
-  const result = diceResult[0] + diceResult[1];
+  const result = diceResult.reduce((acc, num) => {
+    return acc + num;
+  }, 0);
   const rolledEven = result % 2 === 0;
   win =
     (rolledEven && currentBet === 'even') ||
