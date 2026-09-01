@@ -366,3 +366,152 @@
 .setting:active {
   transform: translateY(0);
 }
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+  :root {
+    --width-scale: 94vw;
+    --height-scale: calc(var(--width-scale) * 1.35);
+  }
+
+  .craps {
+    min-height: 100dvh;
+    padding: 1rem 0.5rem;
+    gap: 1rem;
+  }
+
+  .craps-container {
+    width: var(--width-scale);
+    height: var(--height-scale);
+    max-height: none;
+    border-radius: 14px;
+  }
+
+  #main-game {
+    padding: 1rem 0.7rem;
+  }
+
+  #main-game-stats {
+    font-size: 0.85rem;
+    gap: 0.35rem;
+  }
+
+  #craps-stats-money-container {
+    font-size: 1.3rem;
+  }
+
+  #round-manager {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    padding: 0.7rem;
+  }
+
+  #even,
+  #odd {
+    width: 100%;
+    padding: 0.65rem 0;
+    font-size: 0.8rem;
+  }
+
+  #bet-amount {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    gap: 0.6rem;
+  }
+
+  #bet-amount span[onclick] {
+    width: 28px;
+    height: 28px;
+  }
+
+  #user-bet-amount {
+    min-width: 55px;
+    padding: 0.35rem 0.6rem;
+  }
+
+  #dice-roll-container {
+    min-height: 100px;
+    margin-bottom: 0.7rem;
+  }
+
+  #roll-dice {
+    padding: 0.7rem 1.8rem;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  #result {
+    font-size: 1.25rem;
+    min-height: 2rem;
+  }
+
+  .reset-end {
+    width: 100%;
+    gap: 0.6rem;
+  }
+
+  #next-round,
+  #end-game {
+    padding: 0.55rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .setting {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .toast {
+    bottom: 20px;
+    max-width: 90%;
+    white-space: normal;
+    text-align: center;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+  .craps {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .craps-container {
+    width: 96vw;
+    border-radius: 12px;
+  }
+
+  #main-game {
+    padding: 0.7rem 0.5rem;
+  }
+
+  #craps-stats-money-container {
+    font-size: 1.15rem;
+  }
+
+  #round-manager {
+    padding: 0.5rem;
+    gap: 0.4rem;
+  }
+
+  #roll-dice {
+    padding: 0.6rem 1.4rem;
+  }
+
+  #result {
+    font-size: 1.1rem;
+  }
+
+  #next-round,
+  #end-game {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}
