@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="settings.css" />
+    <link rel="stylesheet" href="./crapscasino/craps.css" />
 
     <title>Game Settings</title>
   </head>
@@ -20,7 +21,7 @@
             type="number"
             id="start-up-amount"
             name="startUpAmount"
-            value="4000"
+            value="1000"
             min="0"
           />
         </div>
@@ -31,7 +32,7 @@
             type="number"
             id="minimum-bet"
             name="minimumBet"
-            value="200"
+            value="100"
             min="1"
           />
         </div>
@@ -63,9 +64,10 @@
           <a href="index.html">Back to Game</a>
         </div>
       </form>
+      <div id="toast" class="toast"></div>
     </main>
 
     <script src="settings.js"></script>
+    <script src="./crapscasino/index.js"></script>
   </body>
 </html>
-```

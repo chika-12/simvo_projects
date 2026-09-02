@@ -21,10 +21,10 @@ const savedSettings = localStorage.getItem('gameSettings');
 
 const gameSettings = JSON.parse(savedSettings);
 
-const startUpAmount = gameSettings.startUpAmount;
-const minimumBet = gameSettings.minimumBet;
-const numberOfDice = gameSettings.numberOfDice;
-const delayTime = gameSettings.delayTime;
+let startUpAmount = gameSettings.startUpAmount;
+let minimumBet = gameSettings.minimumBet;
+let numberOfDice = gameSettings.numberOfDice;
+let delayTime = gameSettings.delayTime;
 
 //In built game variables
 const bet = {
@@ -32,7 +32,7 @@ const bet = {
   odd: 'odd',
 };
 const betChoices = [bet.even, bet.odd];
-let numberOfRounds = 0;
+let numberOfRounds = 1;
 let userBetAmount = minimumBet;
 let currentBet = undefined;
 let currentRounds = numberOfRounds;
@@ -98,7 +98,6 @@ function chooseBet(move) {
     });
     document.getElementById(move).style.backgroundColor = 'red';
     currentBet = move;
-    console.log(currentBet);
     haveMadeBet = true;
   }
 }
@@ -188,7 +187,6 @@ function nextRound() {
     SetBetAmount();
   } else {
     showToast('You have run out of cash');
-    endGame();
   }
 }
 
@@ -214,9 +212,9 @@ function endGame() {
   activeBet = 0;
   username = '';
 
-  document.getElementById(userNameId).value = ''; // clear the stale input
-  document.getElementById(mainGame).style.display = 'none'; // hide the game
-  document.getElementById(registrationPane).style.display = 'flex'; // show the form
+  document.getElementById(userNameId).value = '';
+  document.getElementById(mainGame).style.display = 'none';
+  document.getElementById(registrationPane).style.display = 'flex';
   document.getElementById('roll-dice').style.display = '';
   document.getElementById('reset-end').style.display = 'none';
   document.getElementById('dice-roll-container').innerHTML = '';

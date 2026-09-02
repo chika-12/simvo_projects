@@ -1,4 +1,14 @@
 const settingsForm = document.getElementById('settings-form');
+//let toastTimeout;
+// function showToast(message) {
+//   const toast = document.getElementById('toast');
+//   clearTimeout(toastTimeout);
+//   toast.textContent = message;
+//   toast.classList.add('show');
+//   toastTimeout = setTimeout(() => {
+//     toast.classList.remove('show');
+//   }, 2500);
+// }
 
 settingsForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -20,7 +30,14 @@ settingsForm.addEventListener('submit', (event) => {
     delayTime,
   };
 
+  if (Object.values(gameSettings).some((v) => Number.isNaN(v) || v <= 0)) {
+    showToast('Please enter valid positive numbers for all settings');
+    return;
+  }
+
   localStorage.setItem('gameSettings', JSON.stringify(gameSettings));
 
-  alert('Settings saved!');
+  showToast('Settings Saved');
+
+  //alert('Settings saved!');
 });
