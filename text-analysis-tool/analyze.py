@@ -1,6 +1,7 @@
 import nltk
 from random_username.generate import generate_username
 from nltk.tokenize import word_tokenize, sent_tokenize
+import re
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 FILE_PATH = os.path.join(BASE_DIR, "files", "financial_analysis.txt")
@@ -42,6 +43,16 @@ def ensure_nltk_data():
         except LookupError:
             nltk.download(resource)
             
+            
+            
+PATTERNS = {
+    "percentage": r"[+-]?\d+(\.\d+)?%",
+    "currency_naira": r"N\d[\d,]*(\.\d+)?\s?(trillion|billion|million)?",
+    "index_points": r"\d[\d,]*\.\d+\s?points?",
+    "ticker": r"\b[A-Z]{3,10}\b",              # NGX, ASI, YTD, GTCO
+    "date": r"\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}",
+}            
+
 def text_reader(path=FILE_PATH):
     out_put_text = ""
     try:
@@ -59,17 +70,27 @@ def word_tokenizer(sentences):
     for sentence in sentences:
         words.extend(word_tokenize(sentence))
     return words
+
+def sentenceSeaech(sentences):
+    matched = []
+    for sentence in sentences:
+        if re.search(PATTERNS['date'], sentence):
+            matched.append(sentence)
+    return matched
+
 # User Identification
 welcome()
 username = callUserName()
 greetUser(username)
+
+
 #Text Extraction
 text_for_analysis = text_reader()
-#print(text_for_analysis)
+
+
 #Tokenization
-#ensure_nltk_data()
 tokenized_sentences =  text_tokenization(text_for_analysis)
 tokenized_words = word_tokenizer(tokenized_sentences)
-print(tokenized_words)
+print(sentenceSeaech(tokenized_sentences))
 
     
