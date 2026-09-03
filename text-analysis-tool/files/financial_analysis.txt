@@ -1,0 +1,204 @@
+NIGERIAN EXCHANGE (NGX) FINANCIAL ANALYSIS
+Month in Review: August 2026
+Prepared: September 3, 2026
+================================================================
+
+1. HEADLINE SUMMARY
+----------------------------------------------------------------
+Nigerian equities closed August 2026 on a mixed note. The
+benchmark NGX All-Share Index (ASI) declined -0.44% for the
+month, snapping the market's run of consecutive monthly gains,
+even though a strong final trading day (+1.20%, adding N1.91
+trillion) helped claw back much of the month's losses. Despite
+the pullback, the market retained the bulk of its exceptional
+2026 rally.
+
+    Metric                      End of Aug 2026    End of Jul 2026
+    ------------------------------------------------------------
+    All-Share Index (ASI)       244,199.39 pts     245,283.68 pts
+    Change                      -1,084.29 pts (-0.44%)
+    Market Capitalisation       N157.74 trillion   N158.33 trillion
+    Change                      -N590 billion (-0.37%)
+    Year-to-date return         +56.93%            +57.62%
+    Month high (ASI)            244,199.39 (Aug 31)
+    Month low (ASI)             238,682.92 (mid-Aug)
+
+Context: July 2026 alone had added +6.92% / N11.11 trillion to
+the market, so August represented a pause and rotation rather
+than a reversal of the year's trend.
+
+2. THE MONTH IN SHAPE
+----------------------------------------------------------------
+- The market endured an 11-session losing streak during August,
+  dragging the ASI down to a monthly low of 238,682.92 points
+  on August 26.
+- Confirmation that Nigeria will return to FTSE Russell's
+  Frontier Market status (effective September 21, 2026) helped
+  snap the losing streak.
+- August 31 alone contributed a +1.20% single-day gain, adding
+  N1.91 trillion in market cap (from N155.83tn to N157.74tn),
+  on trading value of N38.66 billion (606.13 million shares,
+  53,364 deals) with breadth of 43 advancers vs 17 decliners
+  (2.53x advance/decline ratio).
+- Full-month market breadth: 43 gainers vs 17 losers on the
+  final session, indicative of broad-based buying interest into
+  month-end despite the overall monthly decline.
+
+3. SECTOR PERFORMANCE
+----------------------------------------------------------------
+    Sector                        Aug close       MoM change
+    ------------------------------------------------------------
+    NGX Banking Index              2,624.05 pts    +3.82% (best)
+    NGX Consumer Goods Index       7,182.52 pts    +3.47%
+    NGX Commodity Index            1,759.12 pts    +0.89%
+    NGX Oil & Gas Index            5,255.56 pts    +0.25% (flat)
+    NGX Industrial Goods Index    10,311.46 pts    -2.03%
+    NGX Insurance Index            1,089.01 pts    -9.26% (worst)
+
+Reading: August was less a broad sell-off than a sharp rotation.
+Money moved into banking, consumer goods, and value/dividend
+names, and out of insurance, industrial goods, and richly-valued
+growth stocks.
+
+Banking sector detail: The NGX Banking Index closed the first
+week of August at 2,526.57 points (+68% YTD at that point) and
+ended the month at 2,624.05 points, the strongest-performing
+major sector for August. Gains were led by First HoldCo, Access
+Holdings, Zenith Bank, GTCO, Stanbic IBTC, and Ecobank as
+investors repositioned ahead of dividend season and on continued
+confidence in the post-recapitalisation banking landscape.
+
+4. TOP 10 GAINERS FOR THE MONTH (price return only)
+----------------------------------------------------------------
+    Stock                          Jul close    Aug close   Change
+    ------------------------------------------------------------
+    Haldane McCall (HMCALL)        N2.91        N4.00       +37.46%
+    Access Holdings                N26.30       N32.10      +22.05%
+    UPDC                           N3.00        N3.55       +18.33%
+    Linkage Assurance               N1.60        N1.83       +14.38%
+    Transcorp Hotels               N241.90      N265.50     +9.76%
+    Nigeria REIT (NREIT)           N103.00      N113.00     +9.71%
+    Eterna                         N33.00       N36.00      +9.09%
+    Airtel Africa                  N5,801.40    N6,300.00   +8.59%
+    Seplat Energy                  N11,363.90   N12,320.60  +8.42%
+    First HoldCo                   N134.00      N145.00     +8.21%
+
+Note: Four heavyweight blue-chip names — Airtel Africa, Seplat
+Energy, First HoldCo, and Transcorp Hotels — were disproportionately
+responsible for the market clawing back losses late in the month.
+
+5. TOP 10 LOSERS FOR THE MONTH (price return only)
+----------------------------------------------------------------
+    Stock                                 Jul close   Aug close   Change
+    ------------------------------------------------------------------
+    Zichis Agro Allied                    N24.55      N14.55      -40.73%
+    Thomas Wyatt                          N4.38       N2.75       -37.21%
+    International Energy Insurance        N4.15       N2.82       -32.05%
+    Critical Minerals Financing Corp.     N3.88       N2.77       -28.61%
+    Royal Exchange                        N1.34       N0.96       -28.36%
+    Consolidated Hallmark Holdings        N8.36       N6.01       -28.11%
+    Chellarams                            N13.20      N9.70       -26.52%
+    Unilever Nigeria                      N147.95     N114.00     -22.95%
+    MCNichols                             N5.75       N4.50       -21.74%
+    Veritas Kapital Assurance             N1.43       N1.15       -19.58%
+
+Other notable blue-chip declines weighing on the index: International
+Breweries (-16.95%), Ecobank Transnational Incorporated (-16.81%),
+Transcorp (-12.50%), Dangote Sugar (-11.05%), BUA Foods (-10.00%),
+and TotalEnergies Marketing Nigeria (-10.00%).
+
+6. SECTOR NARRATIVES
+----------------------------------------------------------------
+Banking: Clear winner. Access Holdings and First HoldCo led
+selective gains; the sector benefited from post-recapitalisation
+balance sheet strength and dividend-season positioning.
+
+Consumer Goods: Sharply mixed. Unilever Nigeria, International
+Breweries, BUA Foods, and Dangote Sugar posted sizeable declines,
+while Vitafoam, Nigerian Breweries, NASCON, and Guinness Nigeria
+advanced — the sector index still finished positive overall
+(+3.47%) on strength elsewhere in the basket.
+
+Oil & Gas: A similarly split story. Seplat Energy and Eterna
+gained sharply while Aradel Holdings, Oando, TotalEnergies, and
+Japaul Gold declined — the sector index closed essentially flat
+(+0.25%).
+
+Insurance: The month's clear laggard (-9.26%), continuing a
+pattern of underperformance versus banking despite occasional
+single-name rallies (e.g., International Energy Insurance had
+spiked earlier in the year before giving back gains in August).
+
+Industrial Goods: Declined -2.03%, with several heavyweight names
+(Dangote Cement, Berger Paints, Beta Glass, Geregu Power,
+Transcorp Power) closing August unchanged from July 31 levels —
+suggesting limited institutional repositioning in this sector
+during the month.
+
+7. MACRO / STRUCTURAL CONTEXT
+----------------------------------------------------------------
+- FTSE Russell Frontier Market reclassification: Confirmed
+  effective September 21, 2026, following an assessment of
+  Nigeria's market infrastructure and T+1 settlement framework.
+  This is widely cited by market participants as a catalyst for
+  improved international visibility and potential fresh foreign
+  portfolio inflows.
+- Investor composition: Domestic retail and institutional
+  investors remained dominant, accounting for roughly 90% of
+  transacted value in August; foreign portfolio participation
+  stayed comparatively limited.
+- H1 2026 corporate fundamentals: Nigeria's ten leading NGX
+  blue-chip companies collectively generated N14.4 trillion in
+  revenue in H1 2026 despite elevated inflation, high borrowing
+  costs, and currency volatility — underpinning the broader
+  bullish narrative for the year even amid August's pullback.
+- Naira: Reported to have strengthened past the N1,330/$ mark
+  during the period, its strongest level in roughly two years,
+  which analysts linked to improving investor sentiment.
+
+8. AFRICA REGIONAL COMPARISON (YTD as of Aug 31, 2026)
+----------------------------------------------------------------
+    Exchange / Index                          YTD Return
+    ------------------------------------------------------------
+    Ghana Stock Exchange Composite (GSE-CI)     +71.90%  (#1 in Africa)
+    Zimbabwe Stock Exchange All Share (ZSE-ASI) +71.81%
+    Dar es Salaam Stock Exchange (DSE)          +60.77%
+    Nigerian Exchange All-Share Index (NGX ASI) +56.93%  (#4 in Africa)
+
+NGX ranks among the four best-performing exchanges in Africa
+for 2026 YTD, though August's monthly decline meant it slipped
+slightly relative to the pace set earlier in the year. Ghana's
+rally has been driven substantially by its financial stocks
+index (GSE-FSI, +70.09% YTD), paralleling the banking-led
+strength seen in Nigeria.
+
+9. OUTLOOK GOING INTO SEPTEMBER 2026
+----------------------------------------------------------------
+- Analysts (e.g., David Adonri, Highcap Securities) expect the
+  market to sustain positive momentum into September, with
+  investors likely to stay focused on fundamentally strong,
+  relatively undervalued stocks rather than chasing growth names.
+- The FTSE Russell Frontier Market effective date (Sept 21, 2026)
+  is the single largest near-term catalyst being watched.
+- The broader theme heading into September: investors are
+  becoming more selective, rotating toward value and established
+  earnings and away from expensive growth and structurally
+  weaker sectors (notably insurance).
+
+================================================================
+SOURCES
+- Nairametrics: "Best performing stocks for the month of August
+  2026" (published Sept 1, 2026)
+- Tribune Online: "NGX loses 0.44% in August despite N1.91trn
+  month-end rally"
+- AllAfrica / THISDAY: "NGX ASI up 56.93% YTD, ranks among
+  Africa's top four best-performing exchanges"
+- BusinessDay: NGX Banking Index sector coverage
+- NGX Group official statements (via Nairametrics reporting)
+
+Note: This analysis is compiled from publicly reported market
+data as of early September 2026. It is provided for informational
+purposes and does not constitute investment advice. Figures
+reflect price-return data as reported and may be revised by
+official NGX sources.
+================================================================
