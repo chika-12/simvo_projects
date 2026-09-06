@@ -77,6 +77,12 @@ def sentenceSeaech(sentences):
         if re.search(PATTERNS['date'], sentence):
             matched.append(sentence)
     return matched
+def average_word_per_sentences(sentences):
+    word_count = 0
+    for sentence in sentences:
+        word_count += len(sentence.split(" "))
+    return word_count / len(sentences)
+        
 
 # User Identification
 welcome()
@@ -91,6 +97,8 @@ text_for_analysis = text_reader()
 #Tokenization
 tokenized_sentences =  text_tokenization(text_for_analysis)
 tokenized_words = word_tokenizer(tokenized_sentences)
-print(sentenceSeaech(tokenized_sentences))
+word_per_sentence = average_word_per_sentences(tokenized_sentences)
+print(word_per_sentence)
+#print(sentenceSeaech(tokenized_sentences))
 
     
