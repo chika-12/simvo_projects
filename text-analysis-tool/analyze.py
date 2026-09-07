@@ -13,13 +13,13 @@ from wordcloud import WordCloud # type: ignore
 import matplotlib.pyplot as plt # type: ignore
 from nltk.sentiment.vader import SentimentIntensityAnalyzer #type: ignore
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-FILE_PATH = os.path.join(BASE_DIR, "files", "financial_analysis.txt")
+FILE_PATH =""
 MAX_ATTEMPTS = 3
 MIN_USERNAME_LENGTH = 4
 wordLemmatizer = WordNetLemmatizer()
 stop_words = set(stopwords.words('english'))
 sentiment_analyzer = SentimentIntensityAnalyzer()
-result_file_path = "result/wordcloud.png"
+
 
 
 #Welcomes the user
@@ -56,8 +56,18 @@ def callUserName():
 #Greets the user by name
 def greetUser(name):
     print("Hello ", name)
-    
 
+
+def name_file():
+    name_of_input_file = input("Enter the name of text file: ")
+    file_path = os.path.join(BASE_DIR, "files", name_of_input_file)
+    print(file_path)
+    if os.path.exists(file_path):
+        return file_path
+    else:
+        print("File not found")
+        return None
+        
 #Downloads nltk packages
 def ensure_nltk_data():
     #nltk.download('wordnet')
@@ -69,7 +79,8 @@ def ensure_nltk_data():
             nltk.data.find(f"tokenizers/{resource}")
         except LookupError:
             nltk.download(resource)
-            
+
+
 
 #Regex pattern            
 PATTERNS = {
@@ -94,7 +105,7 @@ def pos_tag_analyzer(pos_tags):
     return wordnet.NOUN
 
 #Text file reader
-def text_reader(path=FILE_PATH):
+def text_reader(path):
     out_put_text = ""
     try:
         with open(path) as text:
@@ -147,12 +158,16 @@ def cleansed_word_list(words_tuples_list):
 welcome()
 username = callUserName()
 greetUser(username)
+FILE_PATH = name_file()
+result_file_path = os.path.basename(FILE_PATH)
+result_file_path = result_file_path.split(".")[0]
+result_file_path = "result/"+result_file_path + ".png"
 
 #Download resources
 #ensure_nltk_data()
 
 #Text Extraction
-text_for_analysis = text_reader()
+text_for_analysis = text_reader(FILE_PATH)
 
 
 #Tokenization
