@@ -10,12 +10,14 @@ import re
 import os
 from wordcloud import WordCloud # type: ignore
 import matplotlib.pyplot as plt # type: ignore
+from nltk.sentiment.vader import SentimentIntensityAnalyzer #type: ignore
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 FILE_PATH = os.path.join(BASE_DIR, "files", "financial_analysis.txt")
 MAX_ATTEMPTS = 3
 MIN_USERNAME_LENGTH = 4
 wordLemmatizer = WordNetLemmatizer()
 stop_words = set(stopwords.words('english'))
+sentiment_analyzer = SentimentIntensityAnalyzer()
 
 
 #Welcomes the user
@@ -56,9 +58,10 @@ def greetUser(name):
 
 #Downloads nltk packages
 def ensure_nltk_data():
-    nltk.download('wordnet')
-    nltk.download('averaged_perceptron_tagger_eng')
-    nltk.download('stopwords')
+    #nltk.download('wordnet')
+    #nltk.download('averaged_perceptron_tagger_eng')
+    #nltk.download('stopwords')
+    #nltk.download('vader_lexicon')
     for resource in ("punkt_tab",):
         try:
             nltk.data.find(f"tokenizers/{resource}")
@@ -176,10 +179,9 @@ wordcloud = WordCloud(
 ).generate(cleaned_text)
 
 wordcloud.to_file('result/wordcloud.png')
-print("Done")
+sentiment_score = sentiment_analyzer.polarity_scores(text_for_analysis)
+print(sentiment_score)
 
-# plt.imshow(wordcloud)
-# plt.axis("off")
-# plt.show()
+
 #print(wordsPosTagged)
     
