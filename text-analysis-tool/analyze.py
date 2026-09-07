@@ -5,7 +5,7 @@ import nltk # type: ignore
 from random_username.generate import generate_username # type: ignore
 from nltk.tokenize import word_tokenize, sent_tokenize # type: ignore
 from nltk.stem import WordNetLemmatizer # type: ignore
-from nltk.corpus import wordnet # type: ignore
+from nltk.corpus import wordnet, stopwords # type: ignore
 import re
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -13,6 +13,8 @@ FILE_PATH = os.path.join(BASE_DIR, "files", "financial_analysis.txt")
 MAX_ATTEMPTS = 3
 MIN_USERNAME_LENGTH = 4
 wordLemmatizer = WordNetLemmatizer()
+stop_words = set(stopwords.words('english'))
+
 
 #Welcomes the user
 def welcome():
@@ -54,6 +56,7 @@ def greetUser(name):
 def ensure_nltk_data():
     nltk.download('wordnet')
     nltk.download('averaged_perceptron_tagger_eng')
+    nltk.download('stopwords')
     for resource in ("punkt_tab",):
         try:
             nltk.data.find(f"tokenizers/{resource}")
@@ -128,7 +131,7 @@ def cleansed_word_list(words_tuples_list):
         word = word_tuple[0]
         pos = word_tuple[1]
         cleansed = word.replace(".", "").replace(",", "").lower()
-        if not re.search(invalid, cleansed) and len(word) > 1:
+        if not re.search(invalid, cleansed) and len(word) > 1 and cleansed not in stop_words:
             cleansed_words.append(wordLemmatizer.lemmatize(cleansed, pos_tag_analyzer(pos)))
     return cleansed_words
 
