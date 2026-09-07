@@ -1,12 +1,15 @@
 import nltk
 from random_username.generate import generate_username
 from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.stem import WordNetLemmatizer
 import re
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 FILE_PATH = os.path.join(BASE_DIR, "files", "financial_analysis.txt")
 MAX_ATTEMPTS = 3
 MIN_USERNAME_LENGTH = 4
+
+wordLemmatizer = WordNetLemmatizer()
 def welcome():
     print("Welcome to the text analysis tool")
 
@@ -37,6 +40,7 @@ def greetUser(name):
     
 
 def ensure_nltk_data():
+    nltk.download('wordnet')
     for resource in ("punkt_tab",):
         try:
             nltk.data.find(f"tokenizers/{resource}")
@@ -77,18 +81,30 @@ def sentenceSeaech(sentences):
         if re.search(PATTERNS['date'], sentence):
             matched.append(sentence)
     return matched
+
 def average_word_per_sentences(sentences):
     word_count = 0
     for sentence in sentences:
         word_count += len(sentence.split(" "))
     return word_count / len(sentences)
-        
+
+def cleansed_word_list(words):
+    cleansed_words = []
+    cleansed = ''
+    invalid = '[^a-zA-Z+]'
+    for word in words:
+        cleansed = word.replace(".", "").replace(",", "").lower()
+        if not re.search(invalid, cleansed) and len(word) > 1:
+            cleansed_words.append(wordLemmatizer.lemmatize(cleansed))
+    return cleansed_words
 
 # User Identification
 welcome()
 username = callUserName()
 greetUser(username)
 
+#Download resources
+ensure_nltk_data()
 
 #Text Extraction
 text_for_analysis = text_reader()
@@ -98,7 +114,11 @@ text_for_analysis = text_reader()
 tokenized_sentences =  text_tokenization(text_for_analysis)
 tokenized_words = word_tokenizer(tokenized_sentences)
 word_per_sentence = average_word_per_sentences(tokenized_sentences)
-print(word_per_sentence)
+#print(tokenized_words)
+#print(word_per_sentence)
 #print(sentenceSeaech(tokenized_sentences))
 
+#Cleansed Word list
+word_list = cleansed_word_list(tokenized_words)
+print(word_list)
     
