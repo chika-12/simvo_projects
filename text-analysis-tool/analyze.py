@@ -8,6 +8,8 @@ from nltk.stem import WordNetLemmatizer # type: ignore
 from nltk.corpus import wordnet, stopwords # type: ignore
 import re
 import os
+from wordcloud import WordCloud # type: ignore
+import matplotlib.pyplot as plt # type: ignore
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 FILE_PATH = os.path.join(BASE_DIR, "files", "financial_analysis.txt")
 MAX_ATTEMPTS = 3
@@ -161,6 +163,23 @@ wordsPosTagged = nltk.pos_tag(tokenized_words)
 
 #Cleansed Word list
 word_list = cleansed_word_list(wordsPosTagged)
-print(word_list)
+#print(word_list)
+
+cleaned_text = " ".join(word_list)
+wordcloud = WordCloud(
+    width=800,
+    height=400,
+    random_state=1,
+    background_color="white",
+    colormap="Pastel2",
+    collocations=False
+).generate(cleaned_text)
+
+wordcloud.to_file('result/wordcloud.png')
+print("Done")
+
+# plt.imshow(wordcloud)
+# plt.axis("off")
+# plt.show()
 #print(wordsPosTagged)
     
