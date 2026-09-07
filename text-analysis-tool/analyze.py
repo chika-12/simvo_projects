@@ -6,6 +6,7 @@ from random_username.generate import generate_username # type: ignore
 from nltk.tokenize import word_tokenize, sent_tokenize # type: ignore
 from nltk.stem import WordNetLemmatizer # type: ignore
 from nltk.corpus import wordnet, stopwords # type: ignore
+import json
 import re
 import os
 from wordcloud import WordCloud # type: ignore
@@ -18,6 +19,7 @@ MIN_USERNAME_LENGTH = 4
 wordLemmatizer = WordNetLemmatizer()
 stop_words = set(stopwords.words('english'))
 sentiment_analyzer = SentimentIntensityAnalyzer()
+result_file_path = "result/wordcloud.png"
 
 
 #Welcomes the user
@@ -178,10 +180,24 @@ wordcloud = WordCloud(
     collocations=False
 ).generate(cleaned_text)
 
-wordcloud.to_file('result/wordcloud.png')
+wordcloud.to_file(result_file_path)
 sentiment_score = sentiment_analyzer.polarity_scores(text_for_analysis)
-print(sentiment_score)
 
-
-#print(wordsPosTagged)
+final_result = {
+    "username": username,
+    "data": {
+        "keySentences":tokenized_sentences,
+        #"wordsAnalysis": word_list,
+        "wordsPerSentence": round(word_per_sentence, 1),
+        "resultFile":result_file_path,
+        "sentimentsScore":sentiment_score,
+    },
+    "metadata":{
+        "sentences": len(tokenized_sentences),
+        "wordAnalyze": len(word_list),
+        
+    }
+}
+jsonResult = json.dumps(final_result, indent=8)
+print(jsonResult)
     
