@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Playfair+Display:ital,wght@0,600;1,500&display=swap');
+
+#random-quote-generator {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  max-width: 680px;
+  margin: 48px auto;
+  padding: 46px;
+  border-radius: 28px;
+  color: #fff;
+  font-family: Inter, system-ui, sans-serif;
+  background:
+    radial-gradient(
+      circle at 15% 0%,
+      rgba(255, 255, 255, 0.32),
+      transparent 34%
+    ),
+    linear-gradient(135deg, #667eea, #764ba2);
+  box-shadow: 0 24px 70px rgba(48, 35, 112, 0.38);
+  isolation: isolate;
+}
+
+#random-quote-generator::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.22),
+    transparent 32%,
+    rgba(0, 0, 0, 0.08)
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+#random-quote,
+#random-quote-author {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  line-height: 1.4;
+}
+
+#random-quote {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+#quote {
+  flex: 1;
+  min-height: 110px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.55rem, 2.6vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  color: #fff;
+}
+
+#quote:empty::before {
+  content: 'Your random quote will appear here...';
+  opacity: 0.55;
+}
+
+#random-quote-author {
+  margin-top: 24px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+#author {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: #fff;
+}
+
+#author:empty {
+  display: none;
+}
+
+#random-quote-generator div[onclick='randomQuote()'] {
+  margin-top: 34px;
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  user-select: none;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+#random-quote-generator div[onclick='randomQuote()']::before {
+  content: '↻';
+  font-size: 1rem;
+}
+
+#random-quote-generator div[onclick='randomQuote()']:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+}
+
+#random-quote-generator div[onclick='randomQuote()']:active {
+  transform: translateY(0) scale(0.98);
+}

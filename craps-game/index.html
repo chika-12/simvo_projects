@@ -16,8 +16,9 @@
     />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./crapscasino/craps.css" />
+    <link rel="stylesheet" href="./random-quote/random.css" />
   </head>
-  <body>
+  <body onload="randomQuote()">
     <div class="grain" aria-hidden="true"></div>
 
     <header class="site-header">
@@ -540,6 +541,17 @@
           </div>
         </div>
       </section>
+      <section class="crabs" id="random-quote-generator">
+        <div id="random-quote">
+          Quote:
+          <div id="quote"></div>
+        </div>
+        <div id="random-quote-author">
+          Author:
+          <div id="author"></div>
+        </div>
+        <div onclick="randomQuote()">New Quote</div>
+      </section>
     </main>
 
     <footer class="site-footer">
@@ -553,5 +565,6 @@
       type="text/javascript"
       src="https://unpkg.com/roll-a-die@2.0.1/dist/roll-a-die.js"
     ></script>
+    <script src="./random-quote/random_quote.js"></script>
   </body>
 </html>
